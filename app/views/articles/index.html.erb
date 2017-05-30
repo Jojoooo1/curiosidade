@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <% @articles.each do |article| %>
+      <div style="margin: 20px">
+        <%= article.title.present? ? article.title : article.id %>
+        <a href="<%= article.slug %>", class="btn btn-primary">Show</a>
+        <%= link_to "Edit", edit_article_path(article.id), class:"btn btn-info" %>
+        <%= link_to "Remove", article_path(article.id), method: :delete, class:"btn btn-danger" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
