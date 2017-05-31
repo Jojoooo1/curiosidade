@@ -22,6 +22,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
 </head>
 <body>
+  <%= render partial: 'shared/flashes' %>
   <%= render partial: 'shared/nav-bar' %>
   <%= yield %>
   <%= render partial: 'shared/footer' %>

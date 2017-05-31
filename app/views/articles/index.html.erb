@@ -1,10 +1,14 @@
+<br>
 <div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+  <div class="col-xs-2">
+  <%= link_to "Create new article", new_article_path, class:"btn btn-success" %>
+  </div>
+    <div class="col-xs-10">
       <% @articles.each do |article| %>
-      <div style="margin: 20px">
+      <div>
         <%= article.title.present? ? article.title : article.id %>
-        <a href="<%= article.slug %>", class="btn btn-primary">Show</a>
+        <%= link_to "Show", article_path(article), class:"btn btn-primary" %>
         <%= link_to "Edit", edit_article_path(article.id), class:"btn btn-info" %>
         <%= link_to "Remove", article_path(article.id), method: :delete, class:"btn btn-danger" %>
       </div>

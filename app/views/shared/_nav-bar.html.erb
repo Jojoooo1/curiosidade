@@ -13,17 +13,20 @@
           </button>
           <a class="navbar-brand" href="index.html"><img class="img-responsive" src="./img/logo-1.png" alt="logo"/></a>
         </div>
-        <div id="mainmenu" class="navbar-collapse collapse">
+        <div id="mainmenu" class="navbar-collapse collapse" style="display: flex !important;"align-items: center;">
           <ul class="nav navbar-nav">
             <li class="active home dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">HUMOR</a>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">HUMOR</a>
             </li>
             <li><a href="#">VIRAL NEWS</a></li>
             <li><a href="#">PARENTING</a></li>
             <li><a href="#">LIFESTYLE</a></li>
             <li><a href="#">INSPIRATION</a></li>
           </ul>
-
+          <% if @article.present? && @article.body.present? %>
+          <%= link_to "Edit article", edit_article_path(@article), class:"btn btn-success pull-right", style:"margin: auto" %>
+          <% end %>
+          <%= link_to "Manage all articles", articles_path, class:"btn btn-primary pull-right", style:"margin: auto" %>
         </div>
       </div>
     </div>

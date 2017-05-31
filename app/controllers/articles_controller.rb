@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.create(article_params)
     if @article.save
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: "Article created with success"
     else
       render :new
     end
@@ -23,20 +23,22 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by_slug(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find_by_slug(params[:id])
     if @article.update(article_params)
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: "Article updated with success"
+    else
+      render :edit
     end
   end
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path
+    redirect_to articles_path, notice: "Article removed with success"
   end
 
   private
