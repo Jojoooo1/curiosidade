@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find_by_slug(params[:id])
     @article.destroy
     redirect_to articles_path, notice: "Article removed with success"
   end
@@ -44,6 +44,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:body, :title, :slug, :next_url, :previous_url)
+    params.require(:article).permit(:body, :title, :slug, :next_url, :previous_url, :image)
   end
 end

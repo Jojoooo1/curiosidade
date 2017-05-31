@@ -4,6 +4,8 @@
       <%= simple_form_for @article do |f| %>
       <%= f.error_notification %>
       <%= f.input :title %>
+      <%= f.file_field :image %>
+      <%= image_tag @article.image_url if @article.image_url.present? %>
       <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}} %>
       <%= f.input :slug, required: true, label: "Url of the article" %>
       <%= f.input :previous_url, label: "Previous article url ?"  %>

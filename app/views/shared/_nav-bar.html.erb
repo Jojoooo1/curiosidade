@@ -24,7 +24,7 @@
             <li><a href="#">LIFESTYLE</a></li>
             <li><a href="#">INSPIRATION</a></li>
           </ul>
-          <% if @article.present? && @article.body.present? %>
+          <% if @article.present? && @article.slug.present? %>
           <%= link_to "Edit article", edit_article_path(@article), class:"btn btn-success pull-right", style:"margin: auto" %>
           <% end %>
           <%= link_to "Manage all articles", articles_path, class:"btn btn-primary pull-right", style:"margin: auto" %>
