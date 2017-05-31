@@ -1,7 +1,7 @@
 <div class="navbar-fixed-top"></div>
 
 <!-- Menu Navigation Start -->
-<div class="navbar navbar-default megamenu clearfix">
+<div class="navbar navbar-default megamenu clearfix" style="min-height: 60px">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -15,7 +15,8 @@
         </div>
         <div id="mainmenu" class="navbar-collapse collapse" style="display: flex !important;"align-items: center;">
           <ul class="nav navbar-nav">
-            <li class="active home dropdown">
+            <li><%= link_to root_path do %><%= image_tag("logo.svg", style:"height: 50px", class:"nav-logo") %> <% end %></li>
+            <li class="">
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">HUMOR</a>
             </li>
             <li><a href="#">VIRAL NEWS</a></li>
