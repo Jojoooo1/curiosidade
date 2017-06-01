@@ -1,0 +1,12 @@
+<div class="col-xs-6 last-small">
+  <div class="img-thumb">
+    <%= link_to article_path(article) do %><div class="fbt-resize" style="background-image: url(<%= asset_path("#{article.image.preview.url}") %>)"></div><% end %>
+    <div class="img-credits">
+      <a class="post-category" href="#"><%= article.categories.first.label %></a>
+      <%= link_to article_path(article) do %><h3><%= article.title %></h3> <% end %>
+      <div class="post-info">
+        <span><%= article.created_at.strftime("%d %B %Y") %></span>
+      </div>
+    </div>
+  </div>
+</div>

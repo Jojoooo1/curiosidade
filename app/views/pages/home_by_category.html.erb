@@ -18,7 +18,11 @@
               <% end %>
               <% else %>
               <div class="message-no-article border-main" style="">
-              <p>We are sorry we don't have any article related to "<%= @category %>" but its coming really soon !</p>
+                <p>We are sorry we don't have any article related to "<%= @category %>" yet but its coming really soon !</p>
+                <%= link_to root_path, class:'btn btn-curio' do %>
+                <i class="fa fa-arrow-left"></i> Go to home page
+                <% end %>
+                <br>
                 <br>
               </div>
               <% end %>

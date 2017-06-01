@@ -22,6 +22,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_slug(params[:id])
+    # get related article based on first category
+    @related_articles = Article.joins(:categories).where(:categories => {:label => @article.categories.first.label})
+    @viral_articles = Article.joins(:categories).where(:categories => {:label => 'viral'})
   end
 
   def edit

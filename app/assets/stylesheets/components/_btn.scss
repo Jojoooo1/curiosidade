@@ -1,0 +1,22 @@
+.btn-curio {
+  background-color: #91DC5A;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-btn {
+  margin-top:7px !important;
+  line-height: normal !important;
+  text-transform: none !important;
+  color: white !important;
+  padding: 6px 12px !important;
+  font-weight: normal !important;
+  font-weight: bold !important;
+}
+
+.navbar-default .navbar-nav > li > .nav-btn:hover, .navbar-default .navbar-nav > li > .nav-btn:active, .navbar-default .navbar-nav > li > .nav-btn:focus {
+ color: black;
+ background: seagreen !important;
+ border-color: seagreen !important;
+ color: white !important;
+}

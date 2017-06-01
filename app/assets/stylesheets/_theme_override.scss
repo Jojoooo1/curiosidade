@@ -1,0 +1,23 @@
+a.post-category {
+  background-color: #91DC5A;
+}
+
+.feuture-posts .img-thumb:hover a.post-category {
+    background: #0099cc;
+}
+
+.post-category:hover {
+    background: #0099cc;
+}
+
+#mainmenu {
+  // height: 60px;
+  // .navbar-nav li a{
+  //   height: 60px !important;
+  //   line-height: 60px;
+  // }
+  .nav-logo {
+    margin: 5px;
+    margin-right: 5px;
+  }
+}

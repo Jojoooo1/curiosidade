@@ -1,0 +1,28 @@
+<div class="post-item small">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="img-thumb">
+       <%= link_to article_path(article) do %>
+       <div class="fbt-resize" style="background-image: url(<%= asset_path("#{article.image.preview.url}") %>)"></div>
+       <% end %>
+     </div>
+   </div>
+   <div class="col-md-8 padding-left-5">
+    <div class="post-content">
+      <%= link_to article_path(article) do %>
+      <h3><%= article.title %></h3>
+      <% end %>
+      <div class="post-info clearfix">
+        <span><a href="#">Jonathan Spencer</a></span>
+        <span>-</span>
+        <span><%= article.created_at.strftime("%d %B %Y") %></span>
+      </div>
+      <div class="text-content">
+        <p>Suspendisse consectetuer, interdum vulputate sit ullamcorper in dictum quis,
+          orci lectus, rhoncus vulputate in risus donec aliquam, neque imperdiet feugiat...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

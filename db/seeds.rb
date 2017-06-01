@@ -13,4 +13,4 @@ Category.create!(label: "music")
 Category.create!(label: "business")
 Category.create!(label: "politics")
 Category.create!(label: "lifestyle")
-
+Category.create!(label: "viral")

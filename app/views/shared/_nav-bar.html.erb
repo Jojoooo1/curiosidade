@@ -1,7 +1,7 @@
 <div class="navbar-fixed-top"></div>
 
 <!-- Menu Navigation Start -->
-<div class="navbar navbar-default megamenu clearfix" style="min-height: 60px">
+<div class="navbar navbar-default megamenu clearfix" >
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -11,26 +11,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img class="img-responsive" src="./img/logo-1.png" alt="logo"/></a>
+          <%= link_to root_path, class:"navbar-brand" do %><%= image_tag("logo.svg", style:"height: 40px", class:"nav-logo img-responsive") %> <% end %>
         </div>
-        <div id="mainmenu" class="navbar-collapse collapse" style="display: flex !important;"align-items: center;">
+        <div id="mainmenu" class="navbar-collapse collapse" style="">
           <ul class="nav navbar-nav">
-            <li><%= link_to root_path do %><%= image_tag("logo.svg", style:"height: 50px", class:"nav-logo") %> <% end %></li>
-            <li class="">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">HUMOR</a>
+          <li><%= link_to root_path, style:"line-height:0px" do %><%= image_tag("logo.svg", style:"height: 40px;", class:"nav-logo") %> <% end %></li>
+            <li class=""> <a href="#" style="margin:auto">HUMOR</a>
             </li>
-            <li><a href="#">VIRAL NEWS</a></li>
-            <li><a href="#">PARENTING</a></li>
-            <li><a href="#">LIFESTYLE</a></li>
-            <li><a href="#">INSPIRATION</a></li>
+            <li><a href="#" style="margin:auto">VIRAL NEWS</a></li>
+            <li><a href="#" style="margin:auto">PARENTING</a></li>
+            <li><a href="#" style="margin:auto" >LIFESTYLE</a></li>
+            <li><a href="#" style="margin:auto">INSPIRATION</a></li>
+            <% if user_signed_in? %>
+            <% if @article.present? && @article.slug.present? %>
+            <li style="margin-left: 20px !important"><%= link_to "Edit article", edit_article_path(@article), class:"btn btn-success nav-btn" %></li>
+            <% end %>
+            <li style="margin-left: 20px !important"><%= link_to "Manage all articles", articles_path, class:"btn btn-curio nav-btn" %></li>
+            <li style="margin-left: 20px !important" ><%= link_to('Logout', destroy_user_session_path, :method => :delete,  class:"btn btn-default nav-btn", style:"color:black !important") %> </li>
+            <% end %>
           </ul>
-          <% if user_signed_in? %>
-          <% if @article.present? && @article.slug.present? %>
-          <%= link_to "Edit article", edit_article_path(@article), class:"btn btn-success pull-right", style:"margin: auto" %>
-          <% end %>
-          <%= link_to "Manage all articles", articles_path, class:"btn btn-primary pull-right", style:"margin: auto" %>
-          <%= link_to('Logout', destroy_user_session_path, :method => :delete,  class:"btn btn-default pull-right", style:"margin: auto") %>
-          <% end %>
         </div>
       </div>
     </div>

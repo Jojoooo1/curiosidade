@@ -23,6 +23,9 @@ gem 'ckeditor'
 gem 'simple_form_jasny_fileupload'
 gem 'devise'
 
+gem 'paginary'
+gem 'will_paginate'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

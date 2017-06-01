@@ -108,6 +108,7 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    paginary (0.0.1.pre1)
     pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -189,6 +190,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.5)
 
 PLATFORMS
   ruby
@@ -207,6 +209,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mini_magick
+  paginary
   pg
   pry-byebug
   pry-rails
@@ -219,6 +222,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
+  will_paginate
 
 RUBY VERSION
    ruby 2.3.1p112
