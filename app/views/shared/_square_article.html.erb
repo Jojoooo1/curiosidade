@@ -1,0 +1,28 @@
+<div class="fbt-col-lg-4 col-md-6 col-sm-12 col-xs-6 fbt-vc-inner post-grid clearfix">
+  <div class="post-item clearfix">
+    <div class="img-thumb">
+      <%= link_to article_path(article) do %>
+      <div class="fbt-resize" style="background-image: url(<%= asset_path("#{article.image.preview.url}") %>)"></div>
+      <% end %>
+    </div>
+    <div class="post-content">
+      <%= link_to article_path(article) do %>
+      <h3><%= article.title %></h3>
+      <% end %>
+      <div class="post-info clearfix">
+        <!-- <span><a href="#">John Doe</a></span> -->
+        <span>Jonathan</span>
+        <span>-</span>
+        <span><%= article.created_at.strftime("%d %B %Y") %></span>
+        <span>-</span>
+        <span class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

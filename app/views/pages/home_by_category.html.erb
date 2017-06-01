@@ -1,0 +1,83 @@
+<!-- Main Content Start -->
+<section id="main-content" class="fbt-blog-grid clearfix">
+  <div class="container">
+    <div class="row">
+      <!-- Post Outer Start -->
+      <div class="outer-wrapper clearfix">
+        <!-- Post Wrapper Start -->
+        <div class="fbt-col-lg-9 col-md-8 col-sm-6 post-wrapper">
+          <div class="row">
+            <!-- Post Content Start -->
+            <div class="fbt-col-lg-12 col-md-12 post-container clearfix">
+              <div class="title-wrapper border-main">
+                <h2><span class="color-main">Latest Articles for <%= @category %></span></h2>
+              </div>
+              <% if @articles.present? %>
+              <% @articles.each do |article| %>
+              <%= render partial: "shared/square_article", locals: {article: article} %>
+              <% end %>
+              <% else %>
+              <div class="message-no-article border-main" style="">
+              <p>We are sorry we don't have any article related to "<%= @category %>" but its coming really soon !</p>
+                <br>
+              </div>
+              <% end %>
+
+              <!-- Pagination Start -->
+              <div class="pagination-box clearfix">
+                <ul class="pagination-list">
+                  <li><a href="#">Prev</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a class="active">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><span> ... </span></li>
+                  <li><a href="#">8</a></li>
+                  <li><a href="#">Next</a></li>
+                </ul>
+                <p>Page 2 of 8</p>
+              </div><!-- Pagination End -->
+
+            </div><!-- Post Content End -->
+          </div>
+        </div><!-- Post Wrapper End -->
+        <!-- Post Sidebar Start -->
+        <div class="fbt-col-lg-3 col-md-4 col-sm-6 post-sidebar clearfix">
+
+          <div class="theiaStickySidebar">
+
+            <!-- Advertisement Start -->
+            <div class="widget advertisement">
+              <div class="desktop-ad">
+                <span>- Advertisement -</span>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+              </div>
+              <div class="tablet-ad">
+                <span>- Advertisement -</span>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+              </div>
+              <div class="mobile-ad">
+                <span>- Advertisement -</span>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+                <a href="#" target="_blank"><%= image_tag('300x250.jpg') %></a>
+              </div>
+            </div><!-- Advertisement End -->
+
+          </div>
+        </div><!-- Post Sidebar End -->
+
+
+      </div>
+    </div><!-- Post Sidebar End -->
+  </div><!-- Post Outer End -->
+</div>
+</div>
+
+<a href="#" id="BackToTop"><i class="fa fa-angle-up"></i></a>
+<div class="navbar-fixed-bottom"></div>
+

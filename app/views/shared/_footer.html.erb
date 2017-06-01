@@ -5,18 +5,12 @@
     <div class="row">
 
       <!-- Footer Widgets Start -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-sm-4">
         <!-- Text Widget Start -->
         <div class="widget text-widget">
           <div class="widget-title">
             <h2>About Us</h2>
           </div>
-          <img class="img-responsive" src="./img/logo-2.png" alt="logo"/>
-          <p><span class="fbt-tooltip" data-toggle="tooltip" title="Favorite Blogger Templates">fbtemplates</span> in Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nunc interdum metus vitae dui tempus ornare. Nulla facilisi.
-            Vivamus id eros sit amet lorem condimentum ultrices.
-            Phasellus imperdiet, magna at sodales dictum, nibh mauris tempor nulla, in consequat est purus eget ante.
-          </p>
 
           <!-- Social Icons Start -->
           <div class="fa-icon-wrap">
@@ -31,111 +25,36 @@
         </div><!-- Text Widget End -->
 
       </div>
-      <div class="col-md-4 col-sm-6">
-
+      <div class="col-sm-8">
         <!-- Categories Widget Start -->
         <div class="widget categories-widget">
           <div class="widget-title">
             <h2>Hot Categories</h2>
           </div>
-          <ul class="category-list">
-            <li><a href="#">Sport <span>32</span></a></li>
-            <li><a href="#">Fashion <span>39</span></a></li>
-            <li><a href="#">Technology <span>12</span></a></li>
-            <li><a href="#">Music <span>15</span></a></li>
-            <li><a href="#">Business <span>12</span></a></li>
-            <li><a href="#">Politics <span>17</span></a></li>
-            <li><a href="#">Lifestyle <span>43</span></a></li>
-          </ul>
+          <div class="col-xs-6">
+            <ul class="category-list">
+              <li><%= link_to home_by_category_path(category: "sport") do %> Sport <span><%= Article.joins(:categories).where(:categories => {:label => "sport"}).size %></span> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Fashion") do %> Fashion <span><%= Article.joins(:categories).where(:categories => {:label => "fashion"}).size %> </span> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Technology") do %> Technology <span><%= Article.joins(:categories).where(:categories => {:label => "technology"}).size %></span> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Music") do %> Music <span><%= Article.joins(:categories).where(:categories => {:label => "music"}).size %></span> <% end %> </li>
+            </ul>
+          </div>
+          <div class="col-xs-6">
+            <ul class="category-list">
+              <li><%= link_to home_by_category_path(category: "Business") do %> Business <span><%= Article.joins(:categories).where(:categories => {:label => "business"}).size %></span></a> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Politics") do %> Politics <span><%= Article.joins(:categories).where(:categories => {:label => "politics"}).size %></span></a> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Lifestyle") do %> Lifestyle <span> <%= Article.joins(:categories).where(:categories => {:label => "lifestyle"}).size %> </span></a> <% end %> </li>
+              <li><%= link_to home_by_category_path(category: "Inspiration") do %> Inspiration <span><%= Article.joins(:categories).where(:categories => {:label => "inspiration"}).size %></span></a> <% end %> </
+            </ul>
+          </div>
         </div><!-- Categories Widget End -->
-
-      </div>
-      <div class="col-md-4 col-sm-6">
-
-        <!-- Footer Small List Start -->
-        <div class="widget fbt-vc-inner clearfix">
-          <div class="widget-title">
-            <h2>Most Commented</h2>
-          </div>
-          <div class="post-item small">
-            <div class="row">
-              <div class="col-sm-4 col-xs-3">
-                <div class="img-thumb">
-                  <a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-4.jpg)"></div></a>
-                </div>
-              </div>
-              <div class="col-sm-8 col-xs-9 no-padding-left">
-                <div class="post-content">
-                  <a href="single.html">
-                    <h3>Aliquam metus mauris, litora orci ligula.</h3>
-                  </a>
-                  <div class="post-info clearfix">
-                    <span>Mar 3, 2016</span>
-                    <span>-</span>
-                    <span><i class="fa fa-commenting-o" aria-hidden="true"></i> 32 Comments</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="post-item small">
-            <div class="row">
-              <div class="col-sm-4 col-xs-3">
-                <div class="img-thumb">
-                  <a href="single.html">
-                    <div class="fbt-resize" style="background-image: url('img/img-31.jpg')"></div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-8 col-xs-9 no-padding-left">
-                <div class="post-content">
-                  <a href="single.html">
-                    <h3>Dolor ut a est maecenas, neque odio dui leo lacus varius.</h3>
-                  </a>
-                  <div class="post-info clearfix">
-                    <span>Mar 2, 2016</span>
-                    <span>-</span>
-                    <span><i class="fa fa-commenting-o" aria-hidden="true"></i> 29 Comments</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="post-item small">
-            <div class="row">
-              <div class="col-sm-4 col-xs-3">
-                <div class="img-thumb">
-                  <a href="single.html">
-                    <div class="fbt-resize" style="background-image: url(img/img-3.jpg)"></div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-8 col-xs-9 no-padding-left">
-                <div class="post-content">
-                  <a href="single.html">
-                    <h3>Etiam duis nunc dui ad sagittis, mauris at rem, in nunc.</h3>
-                  </a>
-                  <div class="post-info clearfix">
-                    <span>Feb 23, 2016</span>
-                    <span>-</span>
-                    <span><i class="fa fa-commenting-o" aria-hidden="true"></i> 26 Comments</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- Footer Small List End -->
-
       </div>
     </div><!-- Footer Widgets End -->
 
     <!-- Copyrights Start -->
     <div class="copyrights">
       <div class="row">
-        <div class="col-md-6">
-          <p>COPYRIGHT &copy; 2017 glossymagazine.com</p>
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-md-offset-6">
           <div class="fbt-footer-nav">
             <ul>
               <li><a href="index.html">Home</a></li>
