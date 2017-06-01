@@ -20,6 +20,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
 
+gem 'simple_form_jasny_fileupload'
+gem 'devise'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

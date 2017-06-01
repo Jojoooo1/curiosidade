@@ -4,11 +4,11 @@
       <%= simple_form_for @article do |f| %>
       <%= f.error_notification %>
       <%= f.input :title %>
-      <%= f.input :image, label: "Article image preview"%>
-      <%= image_tag @article.image_url, width:'80' if @article.image_url.present? %>
-      <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}} %>
+      <p>Article preview</p>
+      <%= f.input :image, as: :jasnyfile, label: false %>
+      <%= f.input :body, :as => :ckeditor, input_html: {:rows => 30, :ckeditor => {:toolbar => 'FULL'}} %>
       <%= f.input :slug, required: true, label: "Url of the article" %>
-      <%= f.input :previous_url, label: "Previous article url ?"  %>
+      <%= f.input :previous_url, label: "Previous article url ?"%>
       <%= f.input :next_url,  label: "Next article url ?" %>
 
       <%= f.button :submit, "Update", class: 'btn btn-primary' %>
