@@ -1,20 +1,46 @@
 <br>
 <div class="container">
   <div class="row">
-  <div class="col-xs-2">
-  <%= link_to "Create new article", new_article_path, class:"btn btn-success" %>
-  </div>
-    <div class="col-xs-10">
-      <% @articles.each do |article| %>
-      <div>
-        <%= article.title.present? ? article.title : article.id %>
-        <%= link_to "Show", article_path(article), class:"btn btn-primary" %>
-        <%= link_to "Edit", edit_article_path(article), class:"btn btn-info" %>
-        <%= link_to "Remove", article_path(article), method: :delete, class:"btn btn-danger" %>
-      </div>
-      <hr>
-      <% end %>
-    </div>
+    <%= link_to new_article_path, class:"btn btn-success" do %>
+    Create new article  <i class="fa fa-plus"></i>
+    <% end %>
+    <%= link_to categories_path, class:"btn btn-default" do %>
+    View categories <i class="fa fa-eye"></i>
+    <% end %>
+    <br>
+    <br>
+    <table class="table table-striped table-hover table-bordered dataTable-no-heading" style="margin-top: 0px !important">
+      <thead>
+        <tr>
+          <th class="col-xs-1">id</th>
+          <th class="col-xs-3">title</th>
+          <th class="col-xs-2" >categories</th>
+          <th class="col-xs-2">created_at</th>
+          <th class="col-xs-3">actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @articles.each do |article| %>
+        <tr class="tr-hoverable">
+          <td><%= article.id %></td>
+          <td> <%= article.title %> </td>
+          <td><% article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
+          <td style="text-align: center"><%= article.created_at.strftime("%H:%M - %d/%m/%Y") %></td>
+          <td>
+            <%= link_to article_path(article), class:"btn btn-primary" do %>
+            Show <i class="fa fa-eye"></i>
+            <% end %>
+            <%= link_to edit_article_path(article), class:"btn btn-info" do %>
+            Edit <i class="fa fa-pencil"></i>
+            <% end %>
+            <%= link_to article_path(article), method: :delete, class:"btn btn-danger" do %>
+            Remove <i class="fa fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 <br>

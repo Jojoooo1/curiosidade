@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+    <h3>Create Category</h3>
+      <%= simple_form_for @category do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :label %>
+      <%= f.button :submit, "Create", class: 'btn btn-primary' %>
+      <%= link_to "Back to categories", categories_path, class:"btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+

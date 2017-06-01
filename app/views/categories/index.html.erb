@@ -1,0 +1,43 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= link_to articles_path, class:"btn btn-primary" do %>
+      <i class="fa fa-arrow-left"></i> Back to articles
+      <% end %>
+      <%= link_to new_category_path, class:"btn btn-success" do %>
+      Add category <i class="fa fa-plus"></i>
+      <% end %>
+      <br>
+      <br>
+      <table class="table table-striped table-hover table-bordered dataTable-no-heading" style="margin-top: 0px !important">
+        <thead>
+          <tr>
+            <th class="col-xs-1">id</th>
+            <th class="col-xs-1">Name</th>
+            <th class="col-xs-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr class="tr-hoverable">
+            <td><%= category.id %></td>
+            <td> <%= category.label %> </td>
+            <td>
+              <%= link_to edit_category_path(category), class:"btn btn-info" do %>
+              Edit <i class="fa fa-pencil"></i>
+              <% end %>
+              <%= link_to category_path(category), method: :delete, class:"btn btn-danger" do %>
+              Remove <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
 
@@ -25,6 +26,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find_by_slug(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -45,6 +47,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:body, :title, :slug, :next_url, :previous_url, :image)
+    params.require(:article).permit(:body, :title, :slug, :next_url, :previous_url, :image, :category_ids)
   end
 end

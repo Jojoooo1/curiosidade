@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, skip: [:registrations]
 
   devise_scope :user do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get 'view', to: 'pages#view'
 
   resources :articles
+  resources :categories, except: [:show]
 
   # scope format: false do
   #   get '/*id', to: 'articles#show'
