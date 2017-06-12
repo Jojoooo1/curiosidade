@@ -12,20 +12,22 @@
               <div class="title-wrapper border-main">
                 <h2><span class="color-main">Articles for <%= @category %></span></h2>
               </div>
-              <% if @articles.present? %>
-              <% @articles.each do |article| %>
-              <%= render partial: "shared/square_article", locals: {article: article} %>
-              <% end %>
-              <% else %>
-              <div class="message-no-article border-main" style="">
-                <p>We are sorry we don't have any article related to "<%= @category %>" yet but its coming really soon !</p>
-                <%= link_to root_path, class:'btn btn-curio' do %>
-                <i class="fa fa-arrow-left"></i> Go to home page
+              <div class="row">
+                <% if @articles.present? %>
+                <% @articles.each do |article| %>
+                <%= render partial: "shared/square_article", locals: {article: article} %>
                 <% end %>
-                <br>
-                <br>
+                <% else %>
+                <div class="message-no-article border-main" style="">
+                  <p>We are sorry we don't have any article related to "<%= @category %>" yet but its coming really soon !</p>
+                  <%= link_to root_path, class:'btn btn-curio' do %>
+                  <i class="fa fa-arrow-left"></i> Go to home page
+                  <% end %>
+                  <br>
+                  <br>
+                </div>
+                <% end %>
               </div>
-              <% end %>
               <!-- Pagination Start -->
               <div class="pagination-box">
                 <%= paginate @articles %>
