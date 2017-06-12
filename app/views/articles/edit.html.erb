@@ -5,7 +5,7 @@
       <%= f.error_notification %>
       <%= f.input :title %>
       <%= f.input :slug, required: true, label: "Url of the article" %>
-      <%= f.input :category_ids , collection: @categories , input_html: { multiple: true }%>
+      <%= f.input :category_ids , as: :select,collection: @categories , include_hidden: false, input_html: { multiple: 'true'}%>
       <p>Article preview</p>
       <%= f.input :image, as: :jasnyfile, label: false %>
       <%= f.input :body, :as => :ckeditor, input_html: {:rows => 30, :ckeditor => {:toolbar => 'FULL'}} %>

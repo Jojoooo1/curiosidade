@@ -1,3 +1,4 @@
+<% if params[:page].nil? || params[:page] == "1" %>
 <!-- Featured Slide Start -->
 <section id="fp-container" class="clearfix">
   <div class="container">
@@ -25,7 +26,7 @@
 
         <!-- Slide Small Start -->
         <div class="col-sm-6 small-section">
-        <%= render partial: "shared/main_medium", locals: {article: @main_small_articles.first} %>
+          <%= render partial: "shared/main_medium", locals: {article: @main_small_articles.first} %>
           <div class="row">
             <div class="fp-small">
               <% @main_small_articles.last(2).each do |article| %>
@@ -39,7 +40,7 @@
     </div>
   </div>
 </section><!-- Featured Slide End -->
-
+<% end %>
 <!-- Main Content Start -->
 <section id="main-content" class="fbt-blog-grid clearfix">
   <div class="container">
@@ -52,7 +53,7 @@
             <!-- Post Content Start -->
             <div class="fbt-col-lg-12 col-md-12 post-container clearfix">
               <div class="title-wrapper border-main">
-                <h2><span class="color-main">Latest Articles</span></h2>
+                <h2><span class="color-main">Articles</span></h2>
               </div>
               <div class="row">
                 <% @latest_articles.each do |article| %>
@@ -61,7 +62,7 @@
               </div>
 
               <!-- Pagination Start -->
-              <div class="pagination-box clearfix">
+<!--               <div class="pagination-box clearfix">
                 <ul class="pagination-list">
                   <li><a href="#">Prev</a></li>
                   <li><a href="#">1</a></li>
@@ -72,8 +73,11 @@
                   <li><a href="#">Next</a></li>
                 </ul>
                 <p>Page 2 of 8</p>
-              </div><!-- Pagination End -->
-
+              </div> -->
+              <!-- Pagination End -->
+              <div class="clearfix">
+                <%= paginate @latest_articles, window: 4 %>
+              </div>
             </div><!-- Post Content End -->
           </div>
         </div><!-- Post Wrapper End -->

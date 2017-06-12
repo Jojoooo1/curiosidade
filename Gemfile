@@ -23,8 +23,7 @@ gem 'ckeditor'
 gem 'simple_form_jasny_fileupload'
 gem 'devise'
 
-gem 'paginary'
-gem 'will_paginate'
+gem 'kaminari'
 
 group :development, :test do
   gem 'binding_of_caller'
