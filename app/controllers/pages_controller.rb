@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   def home_by_category
     @category = params[:category]
-    @articles = Article.joins(:categories).where(:categories => {:label => @category})
+    @articles = Article.joins(:categories).where(:categories => {:label => @category}).order(:created_at).page params[:page]
   end
 
 

@@ -3,11 +3,11 @@ a.post-category {
 }
 
 .feuture-posts .img-thumb:hover a.post-category {
-    background: #0099cc;
+  background: #0099cc;
 }
 
 .post-category:hover {
-    background: #0099cc;
+  background: #0099cc;
 }
 
 #mainmenu {
@@ -20,4 +20,8 @@ a.post-category {
     margin: 5px;
     margin-right: 5px;
   }
+}
+
+.img-crop {
+  margin-bottom: 20px;
 }
