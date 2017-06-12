@@ -12,5 +12,13 @@ class PagesController < ApplicationController
     @articles = Article.joins(:categories).where(:categories => {:label => @category}).order(:created_at).page params[:page]
   end
 
+  def faq
+  end
+
+  def about
+  end
+
+  def contact
+  end
 
 end

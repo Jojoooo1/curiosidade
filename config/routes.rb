@@ -11,16 +11,16 @@ Rails.application.routes.draw do
   end
 
   mount Ckeditor::Engine => '/ckeditor'
+
   root to: 'pages#home'
+  get "faq", to: "pages#faq"
+  get "about", to: "pages#about"
+  get "contact", to: "pages#contact"
   get "category", to: "pages#home_by_category", as: :home_by_category
-  get 'view', to: 'pages#view'
-
   resources :articles
-
   resources :categories, except: [:show]
 
   # scope format: false do
   #   get '/*id', to: 'articles#show'
   # end
-
 end
