@@ -10,7 +10,7 @@
             <!-- Post Content Start -->
             <div class="fbt-col-lg-12 col-md-12 post-container clearfix">
               <div class="title-wrapper border-main">
-                <h2><span class="color-main">Latest Articles for <%= @category %></span></h2>
+                <h2><span class="color-main">Articles for <%= @category %></span></h2>
               </div>
               <% if @articles.present? %>
               <% @articles.each do |article| %>
@@ -26,22 +26,11 @@
                 <br>
               </div>
               <% end %>
-
               <!-- Pagination Start -->
-<!--               <div class="pagination-box clearfix">
-                <ul class="pagination-list">
-                  <li><a href="#">Prev</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a class="active">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><span> ... </span></li>
-                  <li><a href="#">8</a></li>
-                  <li><a href="#">Next</a></li>
-                </ul>
-                <p>Page 2 of 8</p>
-              </div> -->
+              <div class="pagination-box">
+                <%= paginate @articles %>
+              </div>
               <!-- Pagination End -->
-            <%= paginate @articles %>
             </div><!-- Post Content End -->
           </div>
         </div><!-- Post Wrapper End -->

@@ -23,9 +23,9 @@
                       </div>
 
                       <div class="post-info clearfix">
-                        <span><a href="#"><i class="fa fa-pencil-square-o"></i> John Doe</a></span>
+                        <span><a href="#"><i class="fa fa-pencil-square-o"></i> Jonathan Specter</a></span>
                         <span class="sepr">-</span>
-                        <span class="date"><i class="fa fa-clock-o"></i> Feb 9, 2016</span>
+                        <span class="date"><i class="fa fa-clock-o"></i> <%= @article.created_at.strftime("%d %B %Y") %></span>
                         <span class="sepr">-</span>
                         <span class="rating">
                           <i class="fa fa-star"></i>
@@ -42,7 +42,11 @@
                 <%= render partial: "shared/post_share" %>
                 <%= @article.body.html_safe %>
                 <!-- End of article -->
+                <br>
+                <br>
+                <br>
                 ADD FACEBOOK COMMENT
+                <br>
                 <br>
                 <br>
 
@@ -62,7 +66,7 @@
                 <!-- Large List Start -->
                 <div class="fbt-vc-inner nude large clearfix">
                   <div class="title-wrapper border-main">
-                    <h2><span class="color-main">VIRAL NEWS</span></h2>
+                    <h2><span class="color-main"><%= @article.categories.first.label %> NEWS</span></h2>
                   </div>
                   <% @viral_articles.each do |article| %>
                   <%= render partial: 'shared/list_article', locals: {article: article} %>

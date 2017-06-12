@@ -1,4 +1,62 @@
+.pagination {
+  margin-top: 0px
+}
+
 .pagination span a {
   position: static;
   display: initial;
+  // remove decallage
+  transform: initial;
 }
+
+/* Pagination
+----------------------------------------------- */
+.pagination-box .pagination span{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin-right: 3px;
+}
+.pagination-box .pagination span a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  color: #333333;
+  font-size: 12px;
+  padding: 6px 11px;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.pagination-box .pagination span.current {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  color: #333333;
+  font-size: 12px;
+  padding: 6px 11px;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+
+  background-color: lightgrey;
+}
+
+.pagination-box .pagination span a.active,
+.pagination-box .pagination span a:hover {
+  border: 1px solid #91DC5A;
+  background: #91DC5A;
+  color: #ffffff;
+}
+

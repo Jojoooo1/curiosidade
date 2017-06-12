@@ -60,23 +60,11 @@
                 <%= render partial: "shared/square_article", locals: {article: article} %>
                 <% end %>
               </div>
-
               <!-- Pagination Start -->
-<!--               <div class="pagination-box clearfix">
-                <ul class="pagination-list">
-                  <li><a href="#">Prev</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a class="active">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><span> ... </span></li>
-                  <li><a href="#">8</a></li>
-                  <li><a href="#">Next</a></li>
-                </ul>
-                <p>Page 2 of 8</p>
-              </div> -->
+              <div class="pagination-box">
+                <%= paginate @latest_articles %>
+              </div>
               <!-- Pagination End -->
-              <%= paginate @latest_articles %>
-
             </div><!-- Post Content End -->
           </div>
         </div><!-- Post Wrapper End -->

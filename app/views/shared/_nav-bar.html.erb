@@ -15,13 +15,12 @@
         </div>
         <div id="mainmenu" class="navbar-collapse collapse" style="">
           <ul class="nav navbar-nav">
-          <li><%= link_to root_path, style:"line-height:0px" do %><%= image_tag("logo.svg", style:"height: 40px;", class:"nav-logo") %> <% end %></li>
-            <li class=""> <a href="#" style="margin:auto">HUMOR</a>
-            </li>
-            <li><a href="#" style="margin:auto">VIRAL NEWS</a></li>
-            <li><a href="#" style="margin:auto">PARENTING</a></li>
-            <li><a href="#" style="margin:auto" >LIFESTYLE</a></li>
-            <li><a href="#" style="margin:auto">INSPIRATION</a></li>
+            <li><%= link_to root_path, style:"line-height:0px" do %><%= image_tag("logo.svg", style:"height: 40px;", class:"nav-logo") %> <% end %></li>
+            <li><%= link_to "humor", home_by_category_path(category: "humor")%></li>
+            <li><%= link_to "viral", home_by_category_path(category: "viral")%></li>
+            <li><%= link_to "sport", home_by_category_path(category: "sport")%></li>
+            <li><%= link_to "lifestyle", home_by_category_path(category: "lifestyle")%></li>
+            <li><%= link_to "inspiration", home_by_category_path(category: "inspiration")%></li>
             <% if user_signed_in? %>
             <% if @article.present? && @article.slug.present? %>
             <li style="margin-left: 20px !important"><%= link_to "Edit article", edit_article_path(@article), class:"btn btn-success nav-btn" %></li>
