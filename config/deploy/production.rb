@@ -8,7 +8,7 @@ primary: true,
 ssh_options: {
   keys: %w( forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) )
 }
-set :use_sudo, 'true'
+set :use_sudo, 'false'
 set :rails_env, 'production'
 set :branch, 'master'
 set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
