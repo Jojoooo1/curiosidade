@@ -1,8 +1,19 @@
 # config valid only for current version of Capistrano
 lock "3.8.2"
 
-set :application, "curiosidade"
-set :repo_url, "https://github.com/Jojoooo1/curiosidade.git"
+set :application, 'curiosidade'
+set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
+
+  # https://github.com/capistrano/rbenv/
+  set :rbenv_type, :user # or :system, depends on your rbenv setup
+  set :rbenv_ruby, '2.3.1' # run ruby -v on server to ensure the version is correct
+
+  # in case you want to set ruby version from the file:
+  # set :rbenv_ruby, File.read('.ruby-version').strip
+
+  set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+  set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+  set :rbenv_roles, :all # default value
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

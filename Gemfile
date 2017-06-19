@@ -38,6 +38,10 @@ gem 'capistrano-secrets-yml'
 gem "therubyracer"
 gem "execjs"
 
+gem "rbnacl"
+gem "rbnacl-libsodium"
+gem "bcrypt_pbkdf"
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

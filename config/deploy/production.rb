@@ -2,10 +2,18 @@ set :application, 'curiosidade'
 
 server '54.232.197.97',
 user: 'deploy',
-roles: %w{web app db}
-set :ssh_options, { forward_agent: true }
+roles: %w{web app},
+primary: true,
+ssh_options: {
+  keys: %w( forward_agent: true )
+}
 
+set :rails_env, 'production'
+set :branch, 'master'
+set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
 
+set :deploy_via, :remote_cache
+set :deploy_to, "/home/deploy/apps/curiosidade"
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
