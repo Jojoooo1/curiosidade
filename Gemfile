@@ -3,7 +3,6 @@ ruby '2.3.1'
 
 gem 'rails', '5.0.3'
 gem 'puma'
-gem 'passenger'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -25,6 +24,16 @@ gem 'simple_form_jasny_fileupload'
 gem 'devise'
 
 gem 'kaminari'
+
+gem 'passenger'
+# Use Capistrano for deployment
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+gem 'capistrano-rbenv-install'
+gem 'capistrano-secrets-yml'
 
 group :development, :test do
   gem 'binding_of_caller'

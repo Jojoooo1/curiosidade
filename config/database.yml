@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: curio_production
-  username: curiosidade_prod
-  password: <%= ENV['CURIO_DATABASE_PASSWORD'] %>
+  # username: curiosidade_prod
+  # password: <%= ENV['CURIO_DATABASE_PASSWORD'] %>
