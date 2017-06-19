@@ -223,7 +223,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.0.5)
   mini_magick
-  passenger (>= 5.0.25)
+  passenger
   pg
   pry-byebug
   pry-rails

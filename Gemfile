@@ -3,7 +3,7 @@ ruby '2.3.1'
 
 gem 'rails', '5.0.3'
 gem 'puma'
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+gem 'passenger'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
