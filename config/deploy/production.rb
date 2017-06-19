@@ -4,10 +4,11 @@ server '54.232.197.97',
 user: 'deploy',
 roles: %w{web app},
 primary: true,
+
 ssh_options: {
   keys: %w( /etc/ssl/dev/curiosidade.pem )
 }
-
+set :use_sudo, 'true'
 set :rails_env, 'production'
 set :branch, 'master'
 set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
