@@ -6,7 +6,7 @@ roles: %w{web app},
 primary: true,
 
 ssh_options: {
-  keys: %w( /etc/ssl/dev/curiosidade.pem )
+  keys: %w( forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) )
 }
 set :use_sudo, 'true'
 set :rails_env, 'production'

@@ -26,21 +26,6 @@ gem 'devise'
 gem 'kaminari'
 
 gem 'passenger'
-# Use Capistrano for deployment
-gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-passenger'
-gem 'capistrano-rbenv'
-gem 'capistrano-rbenv-install'
-gem 'capistrano-secrets-yml'
-
-gem "therubyracer"
-gem "execjs"
-
-gem "rbnacl"
-gem "rbnacl-libsodium"
-gem "bcrypt_pbkdf"
 
 group :development, :test do
   gem 'binding_of_caller'
