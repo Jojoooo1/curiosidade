@@ -5,7 +5,7 @@ user: 'deploy',
 roles: %w{web app},
 primary: true,
 ssh_options: {
-  keys: %w( forward_agent: true )
+  keys: %w( /etc/ssl/dev/curiosidade.pem )
 }
 
 set :rails_env, 'production'
