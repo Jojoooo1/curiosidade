@@ -11,7 +11,7 @@ ssh_options: {
 set :use_sudo, 'false'
 set :rails_env, 'production'
 set :branch, 'master'
-set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
+set :repo_url, 'git@github.com:Jojoooo1/curiosidade.git'
 
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/deploy/apps/curiosidade"
