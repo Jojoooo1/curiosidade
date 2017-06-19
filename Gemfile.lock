@@ -120,6 +120,9 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    passenger (5.1.5)
+      rack
+      rake (>= 0.8.1)
     pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -220,6 +223,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.0.5)
   mini_magick
+  passenger (>= 5.0.25)
   pg
   pry-byebug
   pry-rails
@@ -237,4 +241,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
