@@ -8,6 +8,7 @@ server '54.232.197.97',
     keys: %w( /home/jonathan/Bureau/server/key_aws/curiosidade.pem )
 }
 
+set :use_sudo, true
 set :rails_env, 'production'
 set :branch, 'master'
 set :repo_url, 'https://github.com/Jojoooo1/curiosidade.git'
