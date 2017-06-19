@@ -27,6 +27,8 @@ gem 'kaminari'
 
 gem 'passenger'
 
+gem 'fog-aws'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
