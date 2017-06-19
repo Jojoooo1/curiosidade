@@ -14,3 +14,6 @@ Category.create!(label: "business")
 Category.create!(label: "politics")
 Category.create!(label: "lifestyle")
 Category.create!(label: "viral")
+
+
+Article.create!(title: "welcome to Curiosidade", description: "Welcome to our first article!")
