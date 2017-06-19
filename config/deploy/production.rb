@@ -5,7 +5,7 @@ server '54.232.197.97',
   roles: %w{web app},
   primary: true,
   ssh_options: {
-    keys: %w( /etc/ssl/dev/curiosidade.pem )
+    keys: %w( /home/jonathan/Bureau/server/key_aws/curiosidade.pem )
 }
 
 set :rails_env, 'production'
