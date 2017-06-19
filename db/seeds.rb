@@ -16,4 +16,4 @@ Category.create!(label: "lifestyle")
 Category.create!(label: "viral")
 
 
-Article.create!(title: "welcome to Curiosidade", description: "Welcome to our first article!")
+Article.create!(title: "welcome to Curiosidade", body: "Welcome to our first article!")
