@@ -11,7 +11,7 @@
             <div class="col-md-12 single-post-container clearfix">
               <div class="single-post">
                 <div class="img-crop">
-                  <%= image_tag @article.image.main, class:"img-responsive" %>
+                  <%= image_tag @article.image.main, class:"img-responsive", style:"width: 200px" %>
                   <div class="img-credits">
                     <div class="col-md-10 col-md-offset-1">
                       <% @article.categories.each do |category| %>
@@ -19,7 +19,6 @@
                       <% end %>
                       <div class="post-title"><h1 style="color: white"><%= @article.title %></h1>
                       </div>
-
                       <div class="post-info clearfix">
                         <span><a href="#"><i class="fa fa-pencil-square-o"></i> Jonathan Specter</a></span>
                         <span class="sepr">-</span>
@@ -38,7 +37,7 @@
                 </div>
                 <!-- Start of article -->
                 <%= render partial: "shared/post_share" %>
-                <%= @article.body.html_safe %>
+                <%= @article.body.html_safe if @article.body.present? %>
                 <!-- End of article -->
                 <%= render partial: 'shared/fb_button_large' %>
                 <br>

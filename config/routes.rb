@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact"
   get "category", to: "pages#home_by_category", as: :home_by_category
   resources :articles
+  get "articles/:id/view-all", to: "articles#view_all_related_article", as: :view_all_related_article
   resources :categories, except: [:show]
 
   # scope format: false do

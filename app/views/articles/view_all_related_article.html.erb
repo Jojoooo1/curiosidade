@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 style='margin-top: 0px;'>Main articles</h1>
+      <table class="table table-striped table-hover table-bordered dataTable-no-heading" style="margin-top: 0px !important">
+        <thead>
+          <tr>
+            <th class="col-xs-1">id</th>
+            <th class="col-xs-2">title</th>
+            <th class="col-xs-2">url</th>
+            <th class="col-xs-2">categories</th>
+            <th class="col-xs-3">actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-hoverable">
+            <td><%= @article.id %></td>
+            <td> <%= @article.title %> </td>
+            <td> <%= @article.slug %> </td>
+            <td><% @article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
+            <td>
+              <%= link_to article_path(@article), class:"btn btn-primary" do %>
+              Show <i class="fa fa-eye"></i>
+              <% end %>
+              <%= link_to edit_article_path(@article), class:"btn btn-info" do %>
+              Edit <i class="fa fa-pencil"></i>
+              <% end %>
+              <%= link_to article_path(@article), method: :delete, class:"btn btn-danger" do %>
+              Remove <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-xs-11 pull-right ">
+      <h1 style='margin-top: 0px;'>Sub articles</h1>
+      <table class="table table-striped table-hover table-bordered dataTable-no-heading" style="margin-top: 0px !important">
+        <thead>
+          <tr>
+            <th class="col-xs-1">id</th>
+            <th class="col-xs-2">title</th>
+            <th class="col-xs-2">url</th>
+            <th class="col-xs-2">categories</th>
+            <th class="col-xs-3">actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @childs.each do |article| %>
+          <tr class="tr-hoverable">
+            <td><%= article.id %></td>
+            <td> <%= article.title %> </td>
+            <td> <%= article.slug %> </td>
+            <td ><% article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
+            <td >
+              <%= link_to article_path(article), class:"btn btn-primary" do %>
+              Show <i class="fa fa-eye"></i>
+              <% end %>
+              <%= link_to edit_article_path(article), class:"btn btn-info" do %>
+              Edit <i class="fa fa-pencil"></i>
+              <% end %>
+              <%= link_to article_path(article), method: :delete, class:"btn btn-danger" do %>
+              Remove <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
