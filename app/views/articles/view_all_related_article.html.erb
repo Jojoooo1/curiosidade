@@ -49,10 +49,10 @@
           <% @childs.each do |article| %>
           <tr class="tr-hoverable">
             <td><%= article.id %></td>
-            <td> <%= article.title %> </td>
-            <td> <%= article.slug %> </td>
-            <td ><% article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
-            <td >
+            <td><%= article.title %></td>
+            <td>prev: <%= article.previous_url %> <br> article: <%= article.slug %> <br> next: <%= article.next_url %> </td>
+            <td><% article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
+            <td>
               <%= link_to article_path(article), class:"btn btn-primary" do %>
               Show <i class="fa fa-eye"></i>
               <% end %>

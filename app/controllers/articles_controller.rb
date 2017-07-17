@@ -13,11 +13,14 @@ class ArticlesController < ApplicationController
       childs = params["childs_number"].to_i
       if childs.present?
         @article.slug << "-1" if @article.slug.last != "1"
-        @article.next_url = @article.slug.sub(/.{1}$/,"#{2}")
+        original_slug = @article.slug.sub(/.{1}$/,"#{2}")
+        @article.next_url = original_slug
         # start at 0
+        slug = @article.next_url
         [*1..childs].each do |article|
-          child = Article.create(parent_id: @article.id, slug: @article.next_url, previous_url: @article.slug)
+          child = Article.create(parent_id: @article.id, slug: original_slug.sub(/.{1}$/,"#{article + 1}"), previous_url: original_slug.sub(/.{1}$/,"#{article}"))
           child.categories = @article.categories
+
           if (article != childs )
             child.next_url = @article.slug.sub(/.{1}$/,"#{article + 2}")
           end
