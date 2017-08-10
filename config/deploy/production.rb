@@ -2,7 +2,7 @@ set :application, 'curiosidade'
 
 server '54.232.197.97',
 user: 'deploy',
-roles: %w{web app},
+roles: %w{web app db},
 primary: true,
 
 ssh_options: {
