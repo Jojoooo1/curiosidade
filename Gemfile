@@ -47,4 +47,5 @@ group :development, :test do
   gem 'capistrano-rbenv-install'
   gem 'capistrano-secrets-yml'
   gem 'capistrano-figaro-yml'
+  gem 'capistrano-migrate'
 end
