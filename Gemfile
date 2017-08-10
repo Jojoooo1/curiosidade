@@ -25,7 +25,7 @@ gem 'devise'
 
 gem 'kaminari'
 
-gem 'passenger'
+gem 'passenger', '>= 5.1.7'
 
 gem 'fog-aws'
 
