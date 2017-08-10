@@ -11,6 +11,7 @@ require 'capistrano/rails/migrations'
 require 'capistrano/passenger'
 require 'capistrano/secrets_yml'
 require 'capistrano/figaro_yml'
+require "capistrano/rails/migrations"
 
 # Load the SCM plugin appropriate to your project:
 #
