@@ -5,15 +5,21 @@
       <%= f.error_notification %>
       <%= f.input :title %>
       <%= f.input :slug, required: true, label: "Url of the article" %>
-      <%= f.input :category_ids , as: :select,collection: @categories , include_hidden: false, input_html: { multiple: 'true'}%>
+      <div class="row">
+        <% if @article.parent_id.present? %>
+        <div class="col-xs-6"><%= f.input :previous_url, label: "Previous article url ?"%></div>
+        <% end %>
+        <div class="col-xs-6"><%= f.input :next_url,  label: "Next article url ?" %></div>
+        <div class="col-xs-6"><%= f.input :category_ids , as: :select,collection: @categories , include_hidden: false, input_html: { multiple: 'true'}%>
+        </div>
+      </div>
       <p>Article preview</p>
       <%= f.input :image, as: :jasnyfile, label: false %>
       <%= f.input :body, :as => :ckeditor, input_html: {:rows => 30, :ckeditor => {:toolbar => 'FULL'}} %>
-      <%= f.input :previous_url, label: "Previous article url ?"%>
-      <%= f.input :next_url,  label: "Next article url ?" %>
 
       <%= f.button :submit, "Update", class: 'btn btn-primary' %>
-      <%= link_to "Back to articles", articles_path, class:"btn btn-default" %>
+      <%= link_to "Back to articles", articles_path, class:"btn btn-info" %>
+      <%= (link_to "Back to sub articles", view_all_related_article_path(@article), class:"btn btn-warning") if @article.parent_id.nil?%>
       <% end %>
     </div>
   </div>

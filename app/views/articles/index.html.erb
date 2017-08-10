@@ -15,8 +15,8 @@
           <th class="col-xs-1">id</th>
           <th class="col-xs-3">title</th>
           <th class="col-xs-2" >categories</th>
-          <th class="col-xs-2">created_at</th>
-          <th class="col-xs-3">actions</th>
+          <th class="col-xs-1">sub articles</th>
+          <th class="col-xs-4">actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,17 +25,23 @@
           <td><%= article.id %></td>
           <td> <%= article.title %> </td>
           <td><% article.categories.each do |category| %> <span><%= category.label %></span> <% end %> </td>
-          <td style="text-align: center"><%= article.created_at.strftime("%H:%M - %d/%m/%Y") %></td>
+          <td style="text-align: center"><%= article.childs.size %></td>
           <td>
             <%= link_to article_path(article), class:"btn btn-primary" do %>
             Show <i class="fa fa-eye"></i>
+            <% end %>
+            <% if article.childs.present? %>
+            <%= link_to view_all_related_article_path(article), class:"btn btn-primary" do %>
+            Show all <i class="fa fa-th-list"></i>
+            <% end %>
             <% end %>
             <%= link_to edit_article_path(article), class:"btn btn-info" do %>
             Edit <i class="fa fa-pencil"></i>
             <% end %>
             <%= link_to article_path(article), method: :delete, class:"btn btn-danger" do %>
-            Remove <i class="fa fa-trash"></i>
+            <i class="fa fa-trash"></i>
             <% end %>
+
           </td>
         </tr>
         <% end %>
