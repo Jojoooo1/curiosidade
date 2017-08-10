@@ -1,1 +1,1 @@
-web: bundle exec passenger start -p 80
+web: bundle exec puma -C config/puma.rb
