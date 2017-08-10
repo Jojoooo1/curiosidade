@@ -12,8 +12,10 @@
           </div>
 
           <div class="fp-slides">
+            <% unless @main_articles.nil? %>
             <%= @main_articles.each do |article| %>
             <%= render partial: "shared/main_slider", locals: {article: article} %>
+            <% end %>
             <% end %>
           </div>
           <nav class="nav-growpop">
@@ -26,19 +28,23 @@
 
         <!-- Slide Small Start -->
         <div class="col-sm-6 small-section">
+          <% unless @main_small_articles.blank? %>
           <%= render partial: "shared/main_medium", locals: {article: @main_small_articles.first} %>
+          <% end %>
           <div class="row">
             <div class="fp-small">
-              <% @main_small_articles.last(2).each do |article| %>
-              <%= render partial: "shared/main_small", locals: {article: article} %>
-              <% end %>
-            </div>
-          </div>
-        </div><!-- Slide Small End -->
+             <% unless @main_small_articles.blank? %>
+             <% @main_small_articles.last(2).each do |article| %>
+             <%= render partial: "shared/main_small", locals: {article: article} %>
+             <% end %>
+             <% end %>
+           </div>
+         </div>
+       </div><!-- Slide Small End -->
 
-      </div>
-    </div>
-  </div>
+     </div>
+   </div>
+ </div>
 </section><!-- Featured Slide End -->
 <% end %>
 <!-- Main Content Start -->
@@ -56,8 +62,10 @@
                 <h2><span class="color-main">Articles</span></h2>
               </div>
               <div class="row">
+                <% unless @latest_articles.nil? %>
                 <% @latest_articles.each do |article| %>
                 <%= render partial: "shared/square_article", locals: {article: article} %>
+                <% end %>
                 <% end %>
               </div>
               <!-- Pagination Start -->
