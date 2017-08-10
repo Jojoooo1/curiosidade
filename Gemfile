@@ -40,12 +40,10 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'capistrano'
-  gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-rbenv-install'
   gem 'capistrano-secrets-yml'
   gem 'capistrano-figaro-yml'
-  gem 'capistrano-migrate'
 end

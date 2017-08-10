@@ -265,7 +265,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capistrano
-  capistrano-bundler
   capistrano-figaro-yml
   capistrano-passenger
   capistrano-rails
