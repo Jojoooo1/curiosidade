@@ -8,5 +8,4 @@ public/uploads
 
 # Ignore application configuration
 /config/application.yml
-/config/secrets.yml
-config/secrets.yml
+
